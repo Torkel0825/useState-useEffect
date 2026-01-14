@@ -4,6 +4,8 @@ export function CatFactsGatheringSpot() {
   const [facts, setFacts] = useState([]);
   const url = "https://catfact.ninja/facts?limit=5";
 
+  // should i use a useEffect for the fetch of information, then the const under for the button and calling the useEffect((),[...]) for more facts? Or is that necessary?
+
   const fetchFacts = async () => {
     try {
       // get the data from the api
