@@ -1,4 +1,4 @@
-import {CatFactsGatheringSpot} from "../api/CatFactsGatheringSpot";
+import CatFactsGatheringSpot from "../api/CatFactsGatheringSpot";
 
 export default function CatInfoCard() {
   return (

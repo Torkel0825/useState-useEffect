@@ -1,12 +1,14 @@
 import {useState} from "react";
 
-export function CatFactsGatheringSpot() {
+export default function CatFactsGatheringSpot() {
   const [facts, setFacts] = useState([]);
   const url = "https://catfact.ninja/facts?limit=5";
 
   // should i use a useEffect for the fetch of information, then the const under for the button and calling the useEffect((),[...]) for more facts? Or is that necessary?
 
-  // need some explanation on the structure of createBrowserRouter() form react-router-dom, since it's use, structure and setup is still confusing. Isn't a page setup with a e.html file better? or necessary?
+  // need some explanation on the structure of createBrowserRouter() form "react-router-dom", since it's use, structure and setup is still confusing. Isn't a page setup with a e.html file better? or necessary?
+
+  // lastly, how useContext() works. I found it generally very confusing.
 
   const fetchFacts = async () => {
     try {
@@ -22,18 +24,28 @@ export function CatFactsGatheringSpot() {
     }
   };
 
+  // useEffect(() => {
+  //   fetchFacts();
+  // }, []);
+  //       {/* map over the array containing the facts gathered; {data: [{ fact: "...", length: 43}, ...]} */}
+  //     {/* Button to run the function once more, gathering 5 more facts */}
+
   //
 
   return (
     <div>
       <div>
-        {/* map over the array containing the facts gathered; {data: [{ fact: "...", length: 43}, ...]} */}
         {facts.map((item, i) => (
           <p key={i}>{item.fact}</p>
         ))}
       </div>
-      {/* Button to run the function once more, gathering 5 more facts */}
-      <button onClick={fetchFacts}>Gwet more facts!</button>
+      <button
+        onClick={() => {
+          fetchFacts();
+        }}
+      >
+        Gwet more facts!
+      </button>
     </div>
   );
 }
