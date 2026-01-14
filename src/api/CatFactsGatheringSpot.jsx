@@ -6,6 +6,8 @@ export function CatFactsGatheringSpot() {
 
   // should i use a useEffect for the fetch of information, then the const under for the button and calling the useEffect((),[...]) for more facts? Or is that necessary?
 
+  // need some explanation on the structure of createBrowserRouter() form react-router-dom, since it's use, structure and setup is still confusing. Isn't a page setup with a e.html file better? or necessary?
+
   const fetchFacts = async () => {
     try {
       // get the data from the api
